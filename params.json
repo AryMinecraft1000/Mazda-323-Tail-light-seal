@@ -6,76 +6,72 @@
       "RH": "B467-51-158"
     },
     "units": "mm",
-    "reference_view": "Viewed from rear mating face of Left-Hand (LH / B467-51-168) housing; Right-Hand (RH / B467-51-158) is mirrored across X.",
+    "reference_view": "Viewed from rear mating face of Left-Hand (LH / B467-51-168) housing per Mazda OEM diagram 51-164; Right-Hand (RH / B467-51-158) is mirrored across X.",
     "material_recommendation": "3mm - 5mm closed-cell EPDM foam rubber",
-    "note": "Parametric 2-aperture cutting template modeled to the 1993 Mazda 323 BG 3-door tail light seal (2 large cutouts separated by 1 central bridge rib, 3 mounting stud holes). Print 1:1 on paper and test-fit against physical housing before final cutting."
+    "note": "Parametric 2-aperture stepped-boss cutting template matching Mazda OEM catalog diagram 51-164 (B467-51-168) and physical 323 BG tail lamp seal. Print 1:1 on paper and test-fit against physical housing before final cutting."
   },
-  "outer_contour": {
-    "width_bottom_mm": 358.0,
-    "width_top_mm": 342.0,
-    "top_x_offset_mm": 4.0,
-    "height_outer_mm": 144.0,
-    "height_inner_mm": 136.0,
-    "inner_y_offset_mm": 4.0,
-    "outer_edge_crown_mm": 6.0,
-    "top_edge_crown_mm": 2.5,
-    "bottom_edge_crown_mm": -1.5,
-    "corner_radii_mm": {
-      "top_outer": 26.0,
-      "bottom_outer": 22.0,
-      "bottom_inner": 14.0,
-      "top_inner": 14.0
-    }
-  },
-  "flange_width_mm": 12.0,
-  "mounting_studs": {
-    "S1_outer_corner": {
-      "x": 48.0,
-      "y": 130.0,
-      "diameter": 6.5,
-      "boss_radius": 11.0
-    },
-    "S2_center_bridge": {
-      "x": 179.0,
-      "y": 124.0,
-      "diameter": 6.5,
-      "boss_radius": 11.0
-    },
-    "S3_inner_corner": {
-      "x": 305.0,
-      "y": 16.0,
-      "diameter": 6.5,
-      "boss_radius": 11.0
-    }
-  },
-  "alignment_pin": {},
-  "drain_notch": {
-    "enabled": true,
-    "x_center": 180.0,
-    "width": 6.0,
-    "depth": 4.0
-  },
-  "chambers": {
-    "outer_chamber": {
-      "x_min": 28.0,
-      "x_max": 171.0,
-      "y_min": 22.0,
-      "y_max": 122.0,
-      "corner_radius": 14.0
-    },
-    "inner_chamber": {
-      "x_min": 187.0,
-      "x_max_bottom": 342.0,
-      "x_max_top": 330.0,
-      "y_min": 24.0,
-      "y_max": 118.0,
-      "corner_radius": 12.0
-    }
+  "reference_width_mm": 350.0,
+  "outer_polygon": [
+    {"x": 0.0, "y": 0.0, "r": 22.0},
+    {"x": 98.0, "y": 1.1, "r": 3.0},
+    {"x": 98.0, "y": -9.0, "r": 3.0},
+    {"x": 142.0, "y": -9.0, "r": 3.0},
+    {"x": 142.0, "y": 1.6, "r": 3.0},
+    {"x": 350.0, "y": 4.0, "r": 16.0},
+    {"x": 350.0, "y": 165.0, "r": 16.0},
+    {"x": 0.0, "y": 165.0, "r": 22.0}
+  ],
+  "left_cutout_polygon": [
+    {"x": 68.0, "y": 23.0, "r": 8.0},
+    {"x": 172.0, "y": 23.0, "r": 10.0},
+    {"x": 172.0, "y": 116.0, "r": 8.0},
+    {"x": 144.0, "y": 116.0, "r": 6.0},
+    {"x": 144.0, "y": 138.0, "r": 8.0},
+    {"x": 56.0, "y": 138.0, "r": 14.0},
+    {"x": 56.0, "y": 46.0, "r": 6.0},
+    {"x": 68.0, "y": 46.0, "r": 6.0}
+  ],
+  "right_cutout_polygon": [
+    {"x": 206.0, "y": 31.0, "r": 10.0},
+    {"x": 266.0, "y": 31.0, "r": 8.0},
+    {"x": 266.0, "y": 65.0, "r": 8.0},
+    {"x": 324.0, "y": 65.0, "r": 8.0},
+    {"x": 324.0, "y": 114.0, "r": 8.0},
+    {"x": 286.0, "y": 114.0, "r": 6.0},
+    {"x": 286.0, "y": 138.0, "r": 8.0},
+    {"x": 206.0, "y": 138.0, "r": 10.0}
+  ],
+  "perimeter_cutout_polygon": [
+    {"x": 68.0, "y": 23.0, "r": 8.0},
+    {"x": 168.0, "y": 23.0, "r": 6.0},
+    {"x": 168.0, "y": 42.0, "r": 6.0},
+    {"x": 204.0, "y": 42.0, "r": 6.0},
+    {"x": 204.0, "y": 31.0, "r": 6.0},
+    {"x": 266.0, "y": 31.0, "r": 8.0},
+    {"x": 266.0, "y": 65.0, "r": 8.0},
+    {"x": 324.0, "y": 65.0, "r": 8.0},
+    {"x": 324.0, "y": 114.0, "r": 8.0},
+    {"x": 286.0, "y": 114.0, "r": 6.0},
+    {"x": 286.0, "y": 138.0, "r": 8.0},
+    {"x": 175.0, "y": 138.0, "r": 8.0},
+    {"x": 175.0, "y": 116.0, "r": 6.0},
+    {"x": 144.0, "y": 116.0, "r": 6.0},
+    {"x": 144.0, "y": 138.0, "r": 8.0},
+    {"x": 56.0, "y": 138.0, "r": 14.0},
+    {"x": 56.0, "y": 46.0, "r": 6.0},
+    {"x": 68.0, "y": 46.0, "r": 6.0}
+  ],
+  "mounting_holes": {
+    "H1_top_outer": {"x": 35.0, "y": 143.0, "diameter": 6.5},
+    "H2_bottom_outer_stud": {"x": 46.0, "y": 28.0, "diameter": 6.5},
+    "H3_top_bridge": {"x": 158.0, "y": 134.0, "diameter": 6.5},
+    "H4_bottom_bridge_stud": {"x": 186.0, "y": 27.0, "diameter": 6.5},
+    "H5_top_inner_boss": {"x": 306.0, "y": 130.0, "diameter": 6.5},
+    "H6_bottom_inner_stud": {"x": 298.0, "y": 48.0, "diameter": 6.5}
   },
   "nesting": {
     "sheet_width_mm": 380.0,
-    "sheet_height_mm": 340.0,
-    "part_gap_mm": 24.0,
+    "sheet_height_mm": 400.0,
     "calibration_bar_mm": {
       "width": 100.0,
       "height": 20.0

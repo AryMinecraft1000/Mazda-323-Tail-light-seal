@@ -267,7 +267,7 @@ def validate_file(
     expected_outer_count: int,
     expected_inner_count: int,
     expected_circle_count: int,
-    min_wall_mm: float = 3.5,
+    min_wall_mm: float = 8.0,
 ) -> Dict:
     """Run all structural and geometric checks on a single DXF file."""
     text = dxf_path.read_text(encoding="utf-8")
@@ -349,7 +349,7 @@ def validate_file(
                     f"{dxf_path.name}: hole {pt} too close to CUT_INNER #{inner_idx} ({d_inner:.2f} mm < {min_wall_mm} mm)"
                 )
 
-    expected_studs = 3 * expected_outer_count
+    expected_studs = 6 * expected_outer_count
     expected_pins = 0
     if stud_count != expected_studs or pin_count != expected_pins:
         raise AssertionError(
@@ -396,25 +396,27 @@ def verify_mirror_symmetry(lh_data: Dict, rh_data: Dict, ref_width: float) -> No
 def main() -> int:
     base = Path(__file__).parent
     params = json.loads((base / "params.json").read_text(encoding="utf-8"))
-    ref_width = params["outer_contour"]["width_bottom_mm"]
+    ref_width = float(params["reference_width_mm"])
+    sheet_w = float(params["nesting"]["sheet_width_mm"])
+    sheet_h = float(params["nesting"]["sheet_height_mm"])
 
-    lh = validate_file(base / "B467-51-168_LH_tail_light_seal.dxf", 1, 2, 3)
-    rh = validate_file(base / "B467-51-158_RH_tail_light_seal.dxf", 1, 2, 3)
+    lh = validate_file(base / "B467-51-168_LH_tail_light_seal.dxf", 1, 2, 6, min_wall_mm=8.0)
+    rh = validate_file(base / "B467-51-158_RH_tail_light_seal.dxf", 1, 2, 6, min_wall_mm=8.0)
     verify_mirror_symmetry(lh, rh, ref_width)
 
-    pair_nested = validate_file(base / "B467-51-168_158_pair_nested.dxf", 2, 4, 6)
-    perim_nested = validate_file(base / "B467-51-168_158_perimeter_variant.dxf", 2, 2, 6)
+    pair_nested = validate_file(base / "B467-51-168_158_pair_nested.dxf", 2, 4, 12, min_wall_mm=8.0)
+    perim_nested = validate_file(base / "B467-51-168_158_perimeter_variant.dxf", 2, 2, 12, min_wall_mm=8.0)
 
-    # Check sheet bounds for nested sheets (380 mm x 340 mm)
+    # Check sheet bounds for nested sheets
     for label, data in [("pair_nested", pair_nested), ("perimeter_variant", perim_nested)]:
         all_pts = [pt for poly in data["outer_polys"] for pt in poly]
         min_x = min(x for x, _ in all_pts)
         max_x = max(x for x, _ in all_pts)
         min_y = min(y for _, y in all_pts)
         max_y = max(y for _, y in all_pts)
-        if min_x < 0.0 or max_x > 380.0 or min_y < 0.0 or max_y > 340.0:
+        if min_x < 0.0 or max_x > sheet_w or min_y < 0.0 or max_y > sheet_h:
             raise AssertionError(
-                f"{label} exceeds 380x340 mm sheet: x=[{min_x:.2f}, {max_x:.2f}], y=[{min_y:.2f}, {max_y:.2f}]"
+                f"{label} exceeds {sheet_w:.0f}x{sheet_h:.0f} mm sheet: x=[{min_x:.2f}, {max_x:.2f}], y=[{min_y:.2f}, {max_y:.2f}]"
             )
 
     print("ALL 4 DXF FILES PASSED GEOMETRIC AND STRUCTURAL VALIDATION")
