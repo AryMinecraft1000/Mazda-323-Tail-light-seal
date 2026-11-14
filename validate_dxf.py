@@ -349,8 +349,8 @@ def validate_file(
                     f"{dxf_path.name}: hole {pt} too close to CUT_INNER #{inner_idx} ({d_inner:.2f} mm < {min_wall_mm} mm)"
                 )
 
-    expected_studs = 4 * expected_outer_count
-    expected_pins = 1 * expected_outer_count
+    expected_studs = 3 * expected_outer_count
+    expected_pins = 0
     if stud_count != expected_studs or pin_count != expected_pins:
         raise AssertionError(
             f"{dxf_path.name}: expected {expected_studs} studs + {expected_pins} pins, got {stud_count} + {pin_count}"
@@ -398,12 +398,12 @@ def main() -> int:
     params = json.loads((base / "params.json").read_text(encoding="utf-8"))
     ref_width = params["outer_contour"]["width_bottom_mm"]
 
-    lh = validate_file(base / "B467-51-168_LH_tail_light_seal.dxf", 1, 3, 5)
-    rh = validate_file(base / "B467-51-158_RH_tail_light_seal.dxf", 1, 3, 5)
+    lh = validate_file(base / "B467-51-168_LH_tail_light_seal.dxf", 1, 2, 3)
+    rh = validate_file(base / "B467-51-158_RH_tail_light_seal.dxf", 1, 2, 3)
     verify_mirror_symmetry(lh, rh, ref_width)
 
-    pair_nested = validate_file(base / "B467-51-168_158_pair_nested.dxf", 2, 6, 10)
-    perim_nested = validate_file(base / "B467-51-168_158_perimeter_variant.dxf", 2, 2, 10)
+    pair_nested = validate_file(base / "B467-51-168_158_pair_nested.dxf", 2, 4, 6)
+    perim_nested = validate_file(base / "B467-51-168_158_perimeter_variant.dxf", 2, 2, 6)
 
     # Check sheet bounds for nested sheets (380 mm x 340 mm)
     for label, data in [("pair_nested", pair_nested), ("perimeter_variant", perim_nested)]:

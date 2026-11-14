@@ -250,13 +250,13 @@ def collect_bosses(params: Dict) -> Tuple[List[Tuple[float, float, float]], List
     return bosses, holes
 
 
-def build_three_chambers(params: Dict, bosses: Sequence[Tuple[float, float, float]]) -> List[List[Point]]:
-    """Build the 3 OEM-style inner chamber cutouts deflected cleanly around stud/pin bosses."""
+def build_two_chambers(params: Dict, bosses: Sequence[Tuple[float, float, float]]) -> List[List[Point]]:
+    """Build the 2 OEM-style inner chamber cutouts separated by 1 central bridge rib."""
     ch = params["chambers"]
     chambers: List[List[Point]] = []
 
-    # 1. Outer turn signal chamber
-    c1 = ch["outer_turn_signal"]
+    # 1. Outer chamber
+    c1 = ch["outer_chamber"]
     pts1 = build_rounded_crowned_quad(
         [
             (c1["x_min"], c1["y_min"]),
@@ -267,58 +267,42 @@ def build_three_chambers(params: Dict, bosses: Sequence[Tuple[float, float, floa
         [c1["corner_radius"]] * 4,
         [0.0] * 4,
         arc_steps=14,
-        edge_steps=20,
+        edge_steps=26,
     )
     chambers.append(deflect_around_bosses(pts1, bosses))
 
-    # 2. Center tail/stop chamber
-    c2 = ch["center_tail_stop"]
+    # 2. Inner chamber (tapered right edge)
+    c2 = ch["inner_chamber"]
     pts2 = build_rounded_crowned_quad(
         [
             (c2["x_min"], c2["y_min"]),
-            (c2["x_max"], c2["y_min"]),
-            (c2["x_max"], c2["y_max"]),
+            (c2["x_max_bottom"], c2["y_min"]),
+            (c2["x_max_top"], c2["y_max"]),
             (c2["x_min"], c2["y_max"]),
         ],
         [c2["corner_radius"]] * 4,
         [0.0] * 4,
         arc_steps=14,
-        edge_steps=20,
+        edge_steps=26,
     )
     chambers.append(deflect_around_bosses(pts2, bosses))
-
-    # 3. Inner reverse chamber (tapered right edge)
-    c3 = ch["inner_reverse"]
-    pts3 = build_rounded_crowned_quad(
-        [
-            (c3["x_min"], c3["y_min"]),
-            (c3["x_max_bottom"], c3["y_min"]),
-            (c3["x_max_top"], c3["y_max"]),
-            (c3["x_min"], c3["y_max"]),
-        ],
-        [c3["corner_radius"]] * 4,
-        [0.0] * 4,
-        arc_steps=14,
-        edge_steps=20,
-    )
-    chambers.append(deflect_around_bosses(pts3, bosses))
 
     return chambers
 
 
 def build_single_aperture(params: Dict, bosses: Sequence[Tuple[float, float, float]]) -> List[Point]:
-    """Build single continuous inner aperture variant (without internal vertical bridge ribs)."""
-    c1 = params["chambers"]["outer_turn_signal"]
-    c3 = params["chambers"]["inner_reverse"]
+    """Build single continuous inner aperture variant (without central bridge rib)."""
+    c1 = params["chambers"]["outer_chamber"]
+    c2 = params["chambers"]["inner_chamber"]
 
     pts = build_rounded_crowned_quad(
         [
             (c1["x_min"], c1["y_min"]),
-            (c3["x_max_bottom"], c3["y_min"]),
-            (c3["x_max_top"], c3["y_max"]),
+            (c2["x_max_bottom"], c1["y_min"]),
+            (c2["x_max_top"], c2["y_max"]),
             (c1["x_min"], c1["y_max"]),
         ],
-        [c1["corner_radius"], c3["corner_radius"], c3["corner_radius"], c1["corner_radius"]],
+        [c1["corner_radius"], c2["corner_radius"], c2["corner_radius"], c1["corner_radius"]],
         [0.0] * 4,
         arc_steps=16,
         edge_steps=36,
@@ -345,17 +329,17 @@ def build_drain_relief(params: Dict, outer_pts: Sequence[Point]) -> List[Point] 
     ])
 
 
-def build_seal_geometry(params: Dict, side: str, style: str = "three_chamber") -> Dict:
+def build_seal_geometry(params: Dict, side: str, style: str = "two_chamber") -> Dict:
     """
     Build complete 2D geometry dictionary for 'LH' (B467-51-168) or 'RH' (B467-51-158).
-    style: 'three_chamber' or 'perimeter'.
+    style: 'two_chamber' or 'perimeter'.
     """
     ref_width = params["outer_contour"]["width_bottom_mm"]
     bosses, holes_lh = collect_bosses(params)
     outer_lh = build_outer_contour(params)
 
-    if style == "three_chamber":
-        inners_lh = build_three_chambers(params, bosses)
+    if style == "two_chamber":
+        inners_lh = build_two_chambers(params, bosses)
     elif style == "perimeter":
         inners_lh = [build_single_aperture(params, bosses)]
     else:
@@ -774,19 +758,19 @@ def main() -> None:
     outdir: Path = args.outdir
     outdir.mkdir(parents=True, exist_ok=True)
 
-    lh_3ch = build_seal_geometry(params, "LH", style="three_chamber")
-    rh_3ch = build_seal_geometry(params, "RH", style="three_chamber")
+    lh_2ch = build_seal_geometry(params, "LH", style="two_chamber")
+    rh_2ch = build_seal_geometry(params, "RH", style="two_chamber")
 
-    write_single_seal_dxf(outdir / "B467-51-168_LH_tail_light_seal.dxf", lh_3ch)
-    write_single_seal_dxf(outdir / "B467-51-158_RH_tail_light_seal.dxf", rh_3ch)
-    write_nested_pair_dxf(outdir / "B467-51-168_158_pair_nested.dxf", params, style="three_chamber")
+    write_single_seal_dxf(outdir / "B467-51-168_LH_tail_light_seal.dxf", lh_2ch)
+    write_single_seal_dxf(outdir / "B467-51-158_RH_tail_light_seal.dxf", rh_2ch)
+    write_nested_pair_dxf(outdir / "B467-51-168_158_pair_nested.dxf", params, style="two_chamber")
     write_nested_pair_dxf(
         outdir / "B467-51-168_158_perimeter_variant.dxf",
         params,
         style="perimeter",
         title_prefix="PERIMETER RING: ",
     )
-    generate_svg_blueprint(outdir / "preview_blueprint.svg", params, lh_3ch, rh_3ch)
+    generate_svg_blueprint(outdir / "preview_blueprint.svg", params, lh_2ch, rh_2ch)
 
     print(f"Generated 4 DXF files and preview_blueprint.svg in {outdir}")
 

@@ -8,7 +8,7 @@
     "units": "mm",
     "reference_view": "Viewed from rear mating face of Left-Hand (LH / B467-51-168) housing; Right-Hand (RH / B467-51-158) is mirrored across X.",
     "material_recommendation": "3mm - 5mm closed-cell EPDM foam rubber",
-    "note": "Nominal parametric cutting template modeled to 323 BG 3-door wrap-around tail lamp geometry. Print 1:1 on paper and test-fit against physical housing before final CNC/laser cutting."
+    "note": "Parametric 2-aperture cutting template modeled to the 1993 Mazda 323 BG 3-door tail light seal (2 large cutouts separated by 1 central bridge rib, 3 mounting stud holes). Print 1:1 on paper and test-fit against physical housing before final cutting."
   },
   "outer_contour": {
     "width_bottom_mm": 358.0,
@@ -29,39 +29,26 @@
   },
   "flange_width_mm": 12.0,
   "mounting_studs": {
-    "S1_top_outer": {
+    "S1_outer_corner": {
       "x": 48.0,
       "y": 130.0,
       "diameter": 6.5,
       "boss_radius": 11.0
     },
-    "S2_top_inner": {
-      "x": 295.0,
-      "y": 127.0,
+    "S2_center_bridge": {
+      "x": 179.0,
+      "y": 124.0,
       "diameter": 6.5,
       "boss_radius": 11.0
     },
-    "S3_bottom_outer": {
-      "x": 52.0,
-      "y": 14.0,
-      "diameter": 6.5,
-      "boss_radius": 11.0
-    },
-    "S4_bottom_inner": {
+    "S3_inner_corner": {
       "x": 305.0,
       "y": 16.0,
       "diameter": 6.5,
       "boss_radius": 11.0
     }
   },
-  "alignment_pin": {
-    "P1_outer_locator": {
-      "x": 18.0,
-      "y": 72.0,
-      "diameter": 8.0,
-      "boss_radius": 12.0
-    }
-  },
+  "alignment_pin": {},
   "drain_notch": {
     "enabled": true,
     "x_center": 180.0,
@@ -69,22 +56,15 @@
     "depth": 4.0
   },
   "chambers": {
-    "outer_turn_signal": {
+    "outer_chamber": {
       "x_min": 28.0,
-      "x_max": 116.0,
+      "x_max": 171.0,
       "y_min": 22.0,
       "y_max": 122.0,
       "corner_radius": 14.0
     },
-    "center_tail_stop": {
-      "x_min": 128.0,
-      "x_max": 234.0,
-      "y_min": 22.0,
-      "y_max": 120.0,
-      "corner_radius": 14.0
-    },
-    "inner_reverse": {
-      "x_min": 246.0,
+    "inner_chamber": {
+      "x_min": 187.0,
       "x_max_bottom": 342.0,
       "x_max_top": 330.0,
       "y_min": 24.0,
