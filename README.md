@@ -61,13 +61,14 @@ For 1:1 scale paper printing and dimension callouts, see [preview_blueprint.svg]
 | [Fugendichtband24 (DE / EU)](https://www.fugendichtband24.de/EPDM-Zellkautschuk-Matten-4mm-Staerke-einseitig-selbstklebend-diverse-Abmessungen.htm) | EPDM Zellkautschuk Matten `4 mm` | `4 mm` | Single-sided self-adhesive |
 | [Gummiprofile24 (DE / EU)](https://www.gummiprofile24.de/epdm_zellkautschuk-platte_5mm) | EPDM Zellkautschuk Platte / Matte `5 mm` | `5 mm` | Plain |
 
-### Romanian Purchase Links (Verified)
+### Romanian Purchase Links (Verified In Stock)
 
 | Supplier | Product | Thickness | Backing |
 | --- | --- | --- | --- |
-| [eMAG.ro](https://www.emag.ro/cauciuc-spongios-pentru-garnituri-epdm-placa-50x100-cm-grosime-5-mm-rub-002/pd/D32NQG3BM/) | Cauciuc spongios pentru garnituri EPDM, placă `50 × 100 cm` | `5 mm` | Plain |
+| [CovoareCauciuc.ro](https://www.covoarecauciuc.ro/placi-din-cauciuc-spongios/placa-cauciuc-epdm-spongios-grosime-5mm-1000x1000mm.html) | Placă cauciuc EPDM spongios (`1000 × 1000 mm`) | `5 mm` | Plain |
+| [CovoareCauciuc.ro](https://www.covoarecauciuc.ro/placi-din-cauciuc-spongios/placa-cauciuc-epdm-spongios-autoadeziv-grosime-5mm-latime-1000mm.html) | Placă cauciuc EPDM spongios autoadeziv (`1000 mm` lățime) | `5 mm` | Single-sided self-adhesive |
+| [CovoareCauciuc.ro](https://www.covoarecauciuc.ro/placi-din-cauciuc-spongios/placa-cauciuc-epdm-spongios-grosime-3mm-1000x1000mm.html) | Placă cauciuc EPDM spongios (`1000 × 1000 mm`) | `3 mm` | Plain |
 | [CovoareCauciuc.ro](https://www.covoarecauciuc.ro/placi-din-cauciuc-spongios/placa-cauciuc-epdm-spongios-autoadeziv-grosime-3mm-latime-1000mm.html) | Placă cauciuc EPDM spongios autoadeziv (`1000 mm` lățime) | `3 mm` | Single-sided self-adhesive |
-| [Poliuretan-Cauciuc.ro](https://www.poliuretan-cauciuc.ro/categorie-produs/cauciuc-celular-epdm-buretos/) | Cauciuc celular EPDM buretos (plăci / role) | Various (`3–5 mm+`) | Plain / self-adhesive |
 
 ## Customizing & Regenerating
 
