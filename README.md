@@ -6,6 +6,10 @@ Parametric 1:1 millimeter DXF cutting models and SVG blueprint for the rear comb
 
 > **Important Fitment Note:** Mazda never published standalone engineering blueprints for `B467-51-168` / `B467-51-158` (they were die-cut closed-cell foam gaskets supplied with the `B467-51-161` / `B467-51-151` lamp housings). These DXF files provide a 1:1 millimeter parametric starting model based on the 323 BG 3-door hatchback wrap-around lamp geometry. **Print `preview_blueprint.svg` at 100% scale on paper, verify the `100.0 mm × 20.0 mm` calibration coupon, and test-fit against your physical lamp housing before cutting foam.**
 
+## Preview
+
+![1993 Mazda 323 BG 3-Door Tail Light Seal 1:1 Blueprint](preview_blueprint.svg)
+
 ## Generated Files
 
 | File | Description |
