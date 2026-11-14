@@ -43,9 +43,31 @@ For 1:1 scale paper printing and dimension callouts, see [preview_blueprint.svg]
 | `CALIBRATION` | `5` (Blue) | `100.0 mm × 20.0 mm` scale verification rectangle (nested sheets) |
 | `ANNOTATIONS` | `8` (Gray) | Part numbers, crosshairs, sheet border, and material notes |
 
-## Material Recommendation
+## Recommended Material & Thickness
 
-- **3 mm – 5 mm closed-cell EPDM sponge foam rubber** (single-sided pressure-sensitive adhesive backing optional on the housing side). Avoid open-cell foam, which absorbs water and causes trunk leaks.
+- **Material:** **Closed-cell EPDM sponge / cellular rubber** (*Zellkautschuk* / *cauciuc spongios EPDM cu celule închise*). Closed-cell EPDM is UV-, ozone-, and weather-resistant (`-40 °C` to `+100 °C`) and does not absorb water. **Avoid open-cell foam**, which wicks water into the trunk/spare-tire well.
+- **Thickness:** **`4 mm` (recommended)** — **`3 mm – 5 mm` acceptable**.
+  - `4 mm`–`5 mm` compresses cleanly against the sheet-metal body lip without over-stressing the tail-light housing studs.
+  - `3 mm` works well if the body flange is flat and undistorted.
+- **Adhesive Backing:** Plain (no adhesive) or **single-sided self-adhesive** (applied to the plastic lamp housing side so the gasket remains removable from the painted body).
+- **Minimum Sheet Size:** At least **`380 mm × 400 mm`** (e.g., `500 × 500 mm` or `500 × 1000 mm`) to cut both LH and RH seals from `B467-51-168_158_pair_nested.dxf`, or **`360 mm × 180 mm`** per single seal.
+
+### EU Purchase Links (Verified)
+
+| Supplier | Product | Thickness | Backing |
+| --- | --- | --- | --- |
+| [Diconfa (DE / EU)](https://diconfa.de/en/epdm-cellular-rubber-foam-sheet-in-various-sizes/) | EPDM Cellular Rubber Foam Sheet (custom sizes) | `1–50 mm` (select `4 mm` or `5 mm`) | Plain or self-adhesive |
+| [VRTrade (NL / EU)](https://vrtrade.com/foam-rubber-sheet-epdm-4mm-width-100cm.html) | EPDM Sponge Rubber Sheet `4 mm` (`100 cm` width) | `4 mm` | Plain |
+| [Fugendichtband24 (DE / EU)](https://www.fugendichtband24.de/EPDM-Zellkautschuk-Matten-4mm-Staerke-einseitig-selbstklebend-diverse-Abmessungen.htm) | EPDM Zellkautschuk Matten `4 mm` | `4 mm` | Single-sided self-adhesive |
+| [Gummiprofile24 (DE / EU)](https://www.gummiprofile24.de/epdm_zellkautschuk-platte_5mm) | EPDM Zellkautschuk Platte / Matte `5 mm` | `5 mm` | Plain |
+
+### Romanian Purchase Links (Verified)
+
+| Supplier | Product | Thickness | Backing |
+| --- | --- | --- | --- |
+| [eMAG.ro](https://www.emag.ro/cauciuc-spongios-pentru-garnituri-epdm-placa-50x100-cm-grosime-5-mm-rub-002/pd/D32NQG3BM/) | Cauciuc spongios pentru garnituri EPDM, placă `50 × 100 cm` | `5 mm` | Plain |
+| [CovoareCauciuc.ro](https://www.covoarecauciuc.ro/placi-din-cauciuc-spongios/placa-cauciuc-epdm-spongios-autoadeziv-grosime-3mm-latime-1000mm.html) | Placă cauciuc EPDM spongios autoadeziv (`1000 mm` lățime) | `3 mm` | Single-sided self-adhesive |
+| [Poliuretan-Cauciuc.ro](https://www.poliuretan-cauciuc.ro/categorie-produs/cauciuc-celular-epdm-buretos/) | Cauciuc celular EPDM buretos (plăci / role) | Various (`3–5 mm+`) | Plain / self-adhesive |
 
 ## Customizing & Regenerating
 
