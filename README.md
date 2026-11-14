@@ -8,7 +8,9 @@ Parametric 1:1 millimeter DXF cutting models and SVG blueprint for the rear comb
 
 ## Preview
 
-![1993 Mazda 323 BG 3-Door Tail Light Seal 1:1 Blueprint](preview_blueprint.svg)
+![1993 Mazda 323 BG 3-Door Tail Light Seal Render](render_preview.png)
+
+For 1:1 scale paper printing and dimension callouts, see [preview_blueprint.svg](preview_blueprint.svg).
 
 ## Geometry Highlights
 
