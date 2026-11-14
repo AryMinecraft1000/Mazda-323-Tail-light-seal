@@ -65,6 +65,7 @@ For 1:1 scale paper printing and dimension callouts, see [preview_blueprint.svg]
 
 | Supplier | Product | Thickness | Backing |
 | --- | --- | --- | --- |
+| [eMAG.ro (Genius / easybox)](https://www.emag.ro/cauciuc-spongios-pentru-garnituri-epdm-placa-100x100cm-grosime-5mm-rub-007/pd/D3CG6G3BM/) | Cauciuc spongios pentru garnituri EPDM, placă `100 × 100 cm` (`RUB-007`) | `5 mm` | Plain |
 | [CovoareCauciuc.ro](https://www.covoarecauciuc.ro/placi-din-cauciuc-spongios/placa-cauciuc-epdm-spongios-grosime-5mm-1000x1000mm.html) | Placă cauciuc EPDM spongios (`1000 × 1000 mm`) | `5 mm` | Plain |
 | [CovoareCauciuc.ro](https://www.covoarecauciuc.ro/placi-din-cauciuc-spongios/placa-cauciuc-epdm-spongios-autoadeziv-grosime-5mm-latime-1000mm.html) | Placă cauciuc EPDM spongios autoadeziv (`1000 mm` lățime) | `5 mm` | Single-sided self-adhesive |
 | [CovoareCauciuc.ro](https://www.covoarecauciuc.ro/placi-din-cauciuc-spongios/placa-cauciuc-epdm-spongios-grosime-3mm-1000x1000mm.html) | Placă cauciuc EPDM spongios (`1000 × 1000 mm`) | `3 mm` | Plain |
