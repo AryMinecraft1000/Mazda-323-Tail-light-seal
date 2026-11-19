@@ -4,7 +4,7 @@ Parametric 1:1 millimeter DXF cutting models and SVG blueprint for the rear comb
 - **`B467-51-168`** (`B46751168`): Left-Hand (LH / Driver Side)
 - **`B467-51-158`** (`B46751158`): Right-Hand (RH / Passenger Side)
 
-> **Important Fitment Note:** Mazda never published standalone dimensional engineering drawings for `B467-51-168` / `B467-51-158` (they were die-cut closed-cell foam gaskets supplied with the `B467-51-161` / `B467-51-151` lamp housings). These DXF files match the OEM `51-164` 2-aperture stepped-boss silhouette (outer profile `350 mm × 165 mm` with `9 mm` downward alignment tab, two asymmetric stepped inner cutouts, and 6 mounting/locator holes). **Print `preview_blueprint.svg` at 100% scale on paper, verify the `100.0 mm × 20.0 mm` calibration coupon, and test-fit against your physical lamp housing before cutting foam.**
+> **Important Fitment Note:** This template is photogrammetrically calibrated directly from a physical `1993 Mazda 323 BG` OEM tail light gasket measured against a metric/imperial tape measure (`334.6 mm × 149.0 mm` outer profile with tapered outer edge, `6.0 mm` bottom step, slanted central bridge, and `8` stud/locator holes). **Print `preview_blueprint.svg` at 100% scale on paper, verify the `100.0 mm × 20.0 mm` calibration coupon, and test-fit against your physical lamp housing before cutting foam.**
 
 ## Preview
 
@@ -14,11 +14,11 @@ For 1:1 scale paper printing and dimension callouts, see [preview_blueprint.svg]
 
 ## Geometry Highlights
 
-- **Outer Contour (`CUT_OUTER`):** `350.0 mm × 165.0 mm` main body with rounded corners and the integral `44.0 mm × 9.0 mm` downward-protruding bottom alignment tab (`y = -9.0 mm`) below the outer chamber.
+- **Outer Contour (`CUT_OUTER`):** `334.6 mm × 149.0 mm` tapered body (slanted outer edge following the hatchback opening) with rounded corners and the `6.0 mm` bottom step-down under the inner chamber.
 - **Two Asymmetric Stepped Inner Cutouts (`CUT_INNER`):**
-  - **Left / Outer Cutout:** Stepped inward at the bottom-left and top-right bridge corner bosses.
-  - **Right / Inner Cutout:** Stepped inward at both upper-right and lower-right L-bosses, separated from the left cutout by the central bridge rib.
-- **Six Mounting Stud / Locator Holes (`CUT_HOLES`, `Ø6.5 mm`):** `H1_top_outer`, `H2_bottom_outer_stud`, `H3_top_bridge`, `H4_bottom_bridge_stud`, `H5_top_inner_boss`, and `H6_bottom_inner_stud`.
+  - **Left / Outer Cutout:** Stepped inward at the top-outer boss (`H1`) and the wider double-hole bottom-outer boss (`H2` & `H3`).
+  - **Right / Inner Cutout:** Stepped inward at the upper-bridge boss (`H4`) and along the lower-right vertical boss (`H7` & `H8`), separated from the left cutout by the slanted (`~10°`) central bridge rib.
+- **Eight Mounting Stud & Locator Holes (`CUT_HOLES`):** `6× Ø8.5 mm` stud clearance holes (`H1`, `H2`, `H4`, `H5`, `H6`, `H8`) + `2× Ø6.2 mm` locating pin holes (`H3_bottom_outer_pin`, `H7_mid_inner_pin`).
 
 ## Generated Files
 
@@ -37,9 +37,9 @@ For 1:1 scale paper printing and dimension callouts, see [preview_blueprint.svg]
 
 | Layer | ACI Color | Contents |
 | --- | --- | --- |
-| `CUT_OUTER` | `7` (White) | Outer gasket perimeter incl. bottom alignment tab (closed `POLYLINE`, `flag 70 = 1`) |
+| `CUT_OUTER` | `7` (White) | Outer gasket perimeter incl. tapered outer edge & `6 mm` bottom step (closed `POLYLINE`, `flag 70 = 1`) |
 | `CUT_INNER` | `3` (Green) | Stepped inner chamber cutouts (closed `POLYLINE`, `flag 70 = 1`) |
-| `CUT_HOLES` | `1` (Red) | 6× mounting stud / locator holes (`Ø6.5 mm` `CIRCLE`) |
+| `CUT_HOLES` | `1` (Red) | `6× Ø8.5 mm` mounting stud holes + `2× Ø6.2 mm` locating pin holes (`CIRCLE`) |
 | `CALIBRATION` | `5` (Blue) | `100.0 mm × 20.0 mm` scale verification rectangle (nested sheets) |
 | `ANNOTATIONS` | `8` (Gray) | Part numbers, crosshairs, sheet border, and material notes |
 
@@ -73,7 +73,7 @@ For 1:1 scale paper printing and dimension callouts, see [preview_blueprint.svg]
 
 ## Customizing & Regenerating
 
-Edit any vertex `{x, y, r}` or hole coordinate (`H1`–`H6`) in `params.json`, then regenerate and validate:
+Edit any vertex `{x, y, r}` or hole coordinate (`H1`–`H8`) in `params.json`, then regenerate and validate:
 
 ```bash
 python3 generate_seal_dxf.py

@@ -148,7 +148,8 @@ def main() -> None:
             idx = (gy * w + px) * 3
             buf[idx], buf[idx + 1], buf[idx + 2] = 228, 234, 242
 
-    ox = (w - 350.0 * scale) / 2.0
+    ref_w = float(params["reference_width_mm"])
+    ox = (w - ref_w * scale) / 2.0
     draw_seal(buf, w, h, lh, scale, ox, 470.0)
     draw_seal(buf, w, h, rh, scale, ox, 980.0)
 

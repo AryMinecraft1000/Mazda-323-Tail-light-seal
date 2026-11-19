@@ -149,7 +149,7 @@ def build_seal_geometry(params: Dict, side: str, style: str = "two_chamber") -> 
     style: 'two_chamber' (OEM 2-aperture stepped-boss) or 'perimeter' (single continuous cutout).
     """
     ref_width = float(params["reference_width_mm"])
-    outer_lh = build_filleted_polygon(params["outer_polygon"], arc_steps=14, edge_steps=12)
+    outer_lh = build_filleted_polygon(params["outer_polygon"], arc_steps=16, edge_steps=12)
 
     if style == "two_chamber":
         inners_lh = [
@@ -501,9 +501,9 @@ def generate_svg_blueprint(path: Path, params: Dict, lh: Dict, rh: Dict) -> None
 
     rows_svg = []
     for idx, (name, spec) in enumerate(params["mounting_holes"].items()):
-        ry = 482.0 + idx * 6.5
+        ry = 480.0 + idx * 5.0
         rows_svg.append(
-            f'<text x="22" y="{ry:.1f}" font-size="3.9" font-family="monospace" fill="#222">{name:<22} X={spec["x"]:6.1f} mm   Y={spec["y"]:6.1f} mm   Ø{spec["diameter"]:.1f} mm</text>'
+            f'<text x="22" y="{ry:.1f}" font-size="3.6" font-family="monospace" fill="#222">{name:<22} X={spec["x"]:6.1f} mm   Y={spec["y"]:6.1f} mm   Ø{spec["diameter"]:.1f} mm</text>'
         )
 
     x_left_dim = lh_tx + min(lh_xs)
@@ -526,7 +526,7 @@ def generate_svg_blueprint(path: Path, params: Dict, lh: Dict, rh: Dict) -> None
   <text x="{0.5*(x_left_dim+x_right_dim):.2f}" y="238" text-anchor="middle" font-size="4.2" font-family="monospace" fill="#1565c0">Overall Width = {span_w:.1f} mm</text>
 
   <line x1="398" y1="{y_top_dim:.2f}" x2="398" y2="{y_bot_dim:.2f}" stroke="#1565c0" stroke-width="0.4" stroke-dasharray="2,1"/>
-  <text x="403" y="{0.5*(y_top_dim+y_bot_dim):.2f}" font-size="4.2" font-family="monospace" fill="#1565c0" transform="rotate(-90 403 {0.5*(y_top_dim+y_bot_dim):.2f})" text-anchor="middle">Overall Height = {span_h:.1f} mm (incl. 9 mm bottom tab)</text>
+  <text x="403" y="{0.5*(y_top_dim+y_bot_dim):.2f}" font-size="4.2" font-family="monospace" fill="#1565c0" transform="rotate(-90 403 {0.5*(y_top_dim+y_bot_dim):.2f})" text-anchor="middle">Overall Height = {span_h:.1f} mm (incl. 6 mm bottom step)</text>
 
   {render_seal_group(lh, lh_tx, lh_ty, "B467-51-168 (LH — Left / Driver Side, per Mazda Diagram 51-164)")}
   {render_seal_group(rh, rh_tx, rh_ty, "B467-51-158 (RH — Right / Passenger Side, Mirrored)")}
