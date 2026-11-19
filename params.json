@@ -1,72 +1,76 @@
 {
   "metadata": {
-    "vehicle": "1993 Mazda 323 BG 3-Door Hatchback (Familia BG)",
+    "vehicle": "1993 Mazda 323 BG 3-Door Hatchback (323 C IV / Familia BG)",
     "part_numbers": {
       "LH": "B467-51-168",
       "RH": "B467-51-158"
     },
+    "stanley_lamp_codes": {
+      "LH": "043-1305L",
+      "RH": "043-1305R"
+    },
     "units": "mm",
-    "reference_view": "Photogrammetrically calibrated from OEM physical seal against metric/imperial tape measure (1.850 px/mm). B467-51-168 (LH) and B467-51-158 (RH) are exact mirror images across X.",
-    "material_recommendation": "3mm - 5mm closed-cell EPDM foam rubber",
-    "note": "Calibrated 2-aperture stepped-boss cutting template (334.6 mm x 149.0 mm) with slanted central bridge, 6x Ø8.5 mm mounting stud holes, and 2x Ø6.2 mm locating pin holes. Print 1:1 on paper and verify 100 mm calibration bar before cutting."
+    "reference_view": "Body-Mating Face UP (matching factory L/R stamped face on NOS Stanley 043-1305R gasket; place single-sided self-adhesive EPDM adhesive-side DOWN when cutting). Cross-calibrated from physical OEM seal (1.850 px/mm tape measure) + NOS Stanley 043-1305R factory gasket + Amayama Mazda EPC (B467-51-168 / B467-51-158).",
+    "material_recommendation": "3mm - 5mm closed-cell EPDM foam rubber (4mm recommended)",
+    "note": "OEM cross-verified 2-aperture cutting template (335.0 mm x 149.0 mm) with slanted hatch-side edge, 2.5 mm bottom step, slanted central bridge, 6x Ø8.5 mm M5 stud-collar holes (99940-0503 nuts), and 2x Ø6.5 mm locating pin holes. Print preview_blueprint.svg at 100% scale and verify the 100 mm bar before cutting."
   },
-  "reference_width_mm": 335.0,
+  "reference_width_mm": 336.0,
   "outer_polygon": [
-    {"x": -2.0,  "y": 6.0,   "r": 18.0},
-    {"x": 138.0, "y": 6.0,   "r": 8.0},
-    {"x": 152.0, "y": 0.0,   "r": 8.0},
-    {"x": 333.0, "y": 0.0,   "r": 18.0},
-    {"x": 335.0, "y": 149.0, "r": 20.0},
-    {"x": 15.0,  "y": 149.0, "r": 22.0}
+    {"x": -1.5,  "y": 2.5,   "r": 20.0},
+    {"x": 140.0, "y": 2.5,   "r": 10.0},
+    {"x": 156.0, "y": 0.0,   "r": 10.0},
+    {"x": 334.0, "y": 0.0,   "r": 18.0},
+    {"x": 336.5, "y": 149.0, "r": 18.0},
+    {"x": 17.0,  "y": 149.0, "r": 22.0}
   ],
   "left_cutout_polygon": [
-    {"x": 79.0,  "y": 27.0,  "r": 8.0},
-    {"x": 136.0, "y": 27.0,  "r": 10.0},
-    {"x": 153.5, "y": 124.5, "r": 8.0},
-    {"x": 75.0,  "y": 124.5, "r": 8.0},
-    {"x": 61.0,  "y": 106.0, "r": 10.0},
-    {"x": 39.0,  "y": 103.0, "r": 8.0},
-    {"x": 34.0,  "y": 57.0,  "r": 8.0},
-    {"x": 69.0,  "y": 49.0,  "r": 8.0}
+    {"x": 80.0,  "y": 26.5,  "r": 8.0},
+    {"x": 136.0, "y": 26.5,  "r": 10.0},
+    {"x": 153.5, "y": 126.5, "r": 8.0},
+    {"x": 74.5,  "y": 126.5, "r": 8.0},
+    {"x": 60.5,  "y": 106.5, "r": 10.0},
+    {"x": 39.0,  "y": 103.5, "r": 8.0},
+    {"x": 34.0,  "y": 56.5,  "r": 8.0},
+    {"x": 70.0,  "y": 49.5,  "r": 8.0}
   ],
   "right_cutout_polygon": [
     {"x": 171.0, "y": 21.5,  "r": 10.0},
-    {"x": 272.0, "y": 21.5,  "r": 10.0},
-    {"x": 273.5, "y": 79.5,  "r": 6.0},
-    {"x": 286.0, "y": 87.5,  "r": 6.0},
-    {"x": 286.0, "y": 123.5, "r": 10.0},
-    {"x": 207.0, "y": 123.5, "r": 10.0},
-    {"x": 187.5, "y": 105.5, "r": 10.0}
+    {"x": 272.5, "y": 21.5,  "r": 10.0},
+    {"x": 274.0, "y": 80.5,  "r": 6.0},
+    {"x": 286.5, "y": 88.5,  "r": 6.0},
+    {"x": 286.5, "y": 127.0, "r": 10.0},
+    {"x": 206.0, "y": 127.0, "r": 10.0},
+    {"x": 187.5, "y": 106.0, "r": 10.0}
   ],
   "perimeter_cutout_polygon": [
-    {"x": 79.0,  "y": 27.0,  "r": 8.0},
-    {"x": 136.0, "y": 27.0,  "r": 6.0},
+    {"x": 80.0,  "y": 26.5,  "r": 8.0},
+    {"x": 136.0, "y": 26.5,  "r": 6.0},
     {"x": 141.5, "y": 52.0,  "r": 6.0},
     {"x": 176.5, "y": 52.0,  "r": 6.0},
     {"x": 171.0, "y": 21.5,  "r": 6.0},
-    {"x": 272.0, "y": 21.5,  "r": 10.0},
-    {"x": 273.5, "y": 79.5,  "r": 6.0},
-    {"x": 286.0, "y": 87.5,  "r": 6.0},
-    {"x": 286.0, "y": 123.5, "r": 10.0},
-    {"x": 207.0, "y": 123.5, "r": 10.0},
-    {"x": 187.5, "y": 105.5, "r": 8.0},
-    {"x": 149.5, "y": 105.5, "r": 6.0},
-    {"x": 153.5, "y": 124.5, "r": 6.0},
-    {"x": 75.0,  "y": 124.5, "r": 8.0},
-    {"x": 61.0,  "y": 106.0, "r": 10.0},
-    {"x": 39.0,  "y": 103.0, "r": 8.0},
-    {"x": 34.0,  "y": 57.0,  "r": 8.0},
-    {"x": 69.0,  "y": 49.0,  "r": 8.0}
+    {"x": 272.5, "y": 21.5,  "r": 10.0},
+    {"x": 274.0, "y": 80.5,  "r": 6.0},
+    {"x": 286.5, "y": 88.5,  "r": 6.0},
+    {"x": 286.5, "y": 127.0, "r": 10.0},
+    {"x": 206.0, "y": 127.0, "r": 10.0},
+    {"x": 187.5, "y": 106.0, "r": 8.0},
+    {"x": 149.5, "y": 106.0, "r": 6.0},
+    {"x": 153.5, "y": 126.5, "r": 6.0},
+    {"x": 74.5,  "y": 126.5, "r": 8.0},
+    {"x": 60.5,  "y": 106.5, "r": 10.0},
+    {"x": 39.0,  "y": 103.5, "r": 8.0},
+    {"x": 34.0,  "y": 56.5,  "r": 8.0},
+    {"x": 70.0,  "y": 49.5,  "r": 8.0}
   ],
   "mounting_holes": {
-    "H1_top_outer_stud":     {"x": 53.1,  "y": 122.2, "diameter": 8.5},
-    "H2_bottom_outer_stud":  {"x": 41.6,  "y": 35.6,  "diameter": 8.5},
-    "H3_bottom_outer_pin":   {"x": 62.4,  "y": 35.9,  "diameter": 6.2},
-    "H4_top_bridge_stud":    {"x": 174.8, "y": 123.5, "diameter": 8.5},
-    "H5_bottom_bridge_stud": {"x": 154.0, "y": 36.2,  "diameter": 8.5},
-    "H6_top_inner_stud":     {"x": 301.5, "y": 124.3, "diameter": 8.5},
-    "H7_mid_inner_pin":      {"x": 297.5, "y": 68.5,  "diameter": 6.2},
-    "H8_bottom_inner_stud":  {"x": 291.9, "y": 36.1,  "diameter": 8.5}
+    "H1_top_inboard_stud":     {"x": 53.2,  "y": 122.7, "diameter": 8.5},
+    "H2_bottom_inboard_stud":  {"x": 41.7,  "y": 35.5,  "diameter": 8.5},
+    "H3_bottom_inboard_pin":   {"x": 62.4,  "y": 36.0,  "diameter": 6.5},
+    "H4_top_bridge_stud":      {"x": 174.7, "y": 122.9, "diameter": 8.5},
+    "H5_bottom_bridge_stud":   {"x": 153.9, "y": 36.1,  "diameter": 8.5},
+    "H6_top_outboard_stud":    {"x": 301.6, "y": 124.4, "diameter": 8.5},
+    "H7_mid_outboard_pin":     {"x": 297.5, "y": 68.8,  "diameter": 6.5},
+    "H8_bottom_outboard_stud": {"x": 292.0, "y": 36.4,  "diameter": 8.5}
   },
   "nesting": {
     "sheet_width_mm": 380.0,

@@ -1,10 +1,10 @@
 # 1993 Mazda 323 BG 3-Door Hatchback — Tail Light Seal DXF Templates
 
-Parametric 1:1 millimeter DXF cutting models and SVG blueprint for the rear combination lamp housing gaskets, modeled to Mazda OEM catalog diagram `51-164`:
-- **`B467-51-168`** (`B46751168`): Left-Hand (LH / Driver Side)
-- **`B467-51-158`** (`B46751158`): Right-Hand (RH / Passenger Side)
+Parametric 1:1 millimeter DXF cutting models and SVG blueprint for the rear combination lamp housing gaskets, cross-verified across **three independent sources**: New Old Stock (NOS) OEM **Stanley `043-1305R`** (`Mazda BS20-51-170A`) factory charcoal foam gasket, bare OEM **Stanley `043-1305R`** housing + **Amayama Mazda EPC** (`B467-51-168` / `B467-51-158`, `6× 99940-0503` M5 nuts), and a physical 1993 323 BG 3-door OEM seal measured against a metric/imperial tape measure (`0.1–1.2 mm` 6-stud agreement):
+- **`B467-51-168`** (`B46751168`): Left-Hand (LH / Driver Side, Stanley `043-1305L`, housing `B467-51-161`)
+- **`B467-51-158`** (`B46751158`): Right-Hand (RH / Passenger Side, Stanley `043-1305R`, housing `B467-51-151` / `BS20-51-170A`)
 
-> **Important Fitment Note:** This template is photogrammetrically calibrated directly from a physical `1993 Mazda 323 BG` OEM tail light gasket measured against a metric/imperial tape measure (`334.6 mm × 149.0 mm` outer profile with tapered outer edge, `6.0 mm` bottom step, slanted central bridge, and `8` stud/locator holes). **Print `preview_blueprint.svg` at 100% scale on paper, verify the `100.0 mm × 20.0 mm` calibration coupon, and test-fit against your physical lamp housing before cutting foam.**
+> **Orientation & Cutting Note:** Both DXF templates are drawn **Body-Mating Face UP** (matching the factory `L` / `R` stamp on the NOS Stanley `043-1305R` gasket). When cutting **single-sided self-adhesive EPDM**, place the sheet **adhesive-side DOWN** (protective liner facing down) so each cut gasket bonds directly onto its matching LH (`043-1305L`) or RH (`043-1305R`) lamp housing without mirroring. **Print `preview_blueprint.svg` at 100% scale on paper, verify the `100.0 mm × 20.0 mm` calibration coupon, and test-fit against your physical lamp housing before cutting foam.**
 
 ## Preview
 
@@ -14,18 +14,18 @@ For 1:1 scale paper printing and dimension callouts, see [preview_blueprint.svg]
 
 ## Geometry Highlights
 
-- **Outer Contour (`CUT_OUTER`):** `334.6 mm × 149.0 mm` tapered body (slanted outer edge following the hatchback opening) with rounded corners and the `6.0 mm` bottom step-down under the inner chamber.
+- **Outer Contour (`CUT_OUTER`):** `335.0 mm × 149.0 mm` body with a slanted inboard (hatch-side) edge, rounded corners, and a subtle **`2.5 mm`** bottom step-down under the outboard chamber.
 - **Two Asymmetric Stepped Inner Cutouts (`CUT_INNER`):**
-  - **Left / Outer Cutout:** Stepped inward at the top-outer boss (`H1`) and the wider double-hole bottom-outer boss (`H2` & `H3`).
-  - **Right / Inner Cutout:** Stepped inward at the upper-bridge boss (`H4`) and along the lower-right vertical boss (`H7` & `H8`), separated from the left cutout by the slanted (`~10°`) central bridge rib.
-- **Eight Mounting Stud & Locator Holes (`CUT_HOLES`):** `6× Ø8.5 mm` stud clearance holes (`H1`, `H2`, `H4`, `H5`, `H6`, `H8`) + `2× Ø6.2 mm` locating pin holes (`H3_bottom_outer_pin`, `H7_mid_inner_pin`).
+  - **Inboard / Hatch-Side Cutout:** Stepped inward at the top-inboard boss (`H1`) and the wider double-hole bottom-inboard boss (`H2` & `H3`).
+  - **Outboard / Fender-Side Cutout:** Stepped inward at the upper-bridge boss (`H4`) and along the lower-outboard boss (`H7` & `H8`), separated from the inboard cutout by the slanted (`~10°`) central bridge rib.
+- **Eight Mounting Stud & Locator Holes (`CUT_HOLES`):** `6× Ø8.5 mm` M5 stud-collar clearance holes (`H1`, `H2`, `H4`, `H5`, `H6`, `H8`) + `2× Ø6.5 mm` molded plastic locating pin holes (`H3_bottom_inboard_pin`, `H7_mid_outboard_pin`).
 
 ## Generated Files
 
 | File | Description |
 | --- | --- |
-| `B467-51-168_LH_tail_light_seal.dxf` | Left-Hand (LH) 2-aperture stepped-boss OEM gasket (AutoCAD R12 `AC1009`, mm) |
-| `B467-51-158_RH_tail_light_seal.dxf` | Right-Hand (RH) 2-aperture stepped-boss OEM gasket (exact mirror of LH) |
+| `B467-51-168_LH_tail_light_seal.dxf` | Left-Hand (LH / Stanley `043-1305L`) 2-aperture OEM gasket (AutoCAD R12 `AC1009`, mm) |
+| `B467-51-158_RH_tail_light_seal.dxf` | Right-Hand (RH / Stanley `043-1305R`) 2-aperture OEM gasket (exact mirror of LH) |
 | `B467-51-168_158_pair_nested.dxf` | LH + RH pair nested on a `380 mm × 400 mm` sheet with `100 mm` calibration bar |
 | `B467-51-168_158_perimeter_variant.dxf` | LH + RH single-aperture perimeter ring variant (without central bridge rib) |
 | `preview_blueprint.svg` | 1:1 printable visual blueprint with hole callouts, coordinate table, and `100 mm` scale bar |
@@ -37,9 +37,9 @@ For 1:1 scale paper printing and dimension callouts, see [preview_blueprint.svg]
 
 | Layer | ACI Color | Contents |
 | --- | --- | --- |
-| `CUT_OUTER` | `7` (White) | Outer gasket perimeter incl. tapered outer edge & `6 mm` bottom step (closed `POLYLINE`, `flag 70 = 1`) |
+| `CUT_OUTER` | `7` (White) | Outer gasket perimeter incl. slanted hatch-side edge & `2.5 mm` bottom step (closed `POLYLINE`, `flag 70 = 1`) |
 | `CUT_INNER` | `3` (Green) | Stepped inner chamber cutouts (closed `POLYLINE`, `flag 70 = 1`) |
-| `CUT_HOLES` | `1` (Red) | `6× Ø8.5 mm` mounting stud holes + `2× Ø6.2 mm` locating pin holes (`CIRCLE`) |
+| `CUT_HOLES` | `1` (Red) | `6× Ø8.5 mm` M5 stud-collar holes + `2× Ø6.5 mm` locating pin holes (`CIRCLE`) |
 | `CALIBRATION` | `5` (Blue) | `100.0 mm × 20.0 mm` scale verification rectangle (nested sheets) |
 | `ANNOTATIONS` | `8` (Gray) | Part numbers, crosshairs, sheet border, and material notes |
 

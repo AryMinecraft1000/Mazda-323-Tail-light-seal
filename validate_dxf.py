@@ -6,12 +6,12 @@ Checks:
   1. Valid DXF tag/value line pairs, HEADER/TABLES/BLOCKS/ENTITIES/EOF, $INSUNITS = 4.
   2. Every POLYLINE on CUT_OUTER and CUT_INNER is closed (flag 70 == 1), has zero
      consecutive/wrap-around duplicate vertices, and zero segment self-intersections.
-  3. Every CIRCLE on CUT_HOLES has radius 3.25 mm (4x studs) or 4.00 mm (1x locator pin),
+  3. Every CIRCLE on CUT_HOLES has radius 4.25 mm (6x M5 studs) or 3.25 mm (2x locator pins),
      and every hole + wall/boss clearance lies strictly inside CUT_OUTER and outside
-     all CUT_INNER cutouts (minimum foam wall >= 3.5 mm).
+     all CUT_INNER cutouts (minimum foam wall >= 8.0 mm).
   4. Exact mirror symmetry between B467-51-168_LH_tail_light_seal.dxf and
      B467-51-158_RH_tail_light_seal.dxf.
-  5. Nested sheets fit cleanly inside 380 mm x 340 mm with no inter-part collisions.
+  5. Nested sheets fit cleanly inside 380 mm x 400 mm with no inter-part collisions.
 """
 
 from __future__ import annotations
@@ -325,7 +325,7 @@ def validate_file(
         r = c["r"]
         if math.isclose(r, 4.25, abs_tol=1e-3):
             stud_count += 1
-        elif math.isclose(r, 3.10, abs_tol=1e-3):
+        elif math.isclose(r, 3.25, abs_tol=1e-3):
             pin_count += 1
         else:
             raise AssertionError(f"{dxf_path.name}: unexpected hole radius {r:.4f} mm")

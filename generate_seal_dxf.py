@@ -526,10 +526,10 @@ def generate_svg_blueprint(path: Path, params: Dict, lh: Dict, rh: Dict) -> None
   <text x="{0.5*(x_left_dim+x_right_dim):.2f}" y="238" text-anchor="middle" font-size="4.2" font-family="monospace" fill="#1565c0">Overall Width = {span_w:.1f} mm</text>
 
   <line x1="398" y1="{y_top_dim:.2f}" x2="398" y2="{y_bot_dim:.2f}" stroke="#1565c0" stroke-width="0.4" stroke-dasharray="2,1"/>
-  <text x="403" y="{0.5*(y_top_dim+y_bot_dim):.2f}" font-size="4.2" font-family="monospace" fill="#1565c0" transform="rotate(-90 403 {0.5*(y_top_dim+y_bot_dim):.2f})" text-anchor="middle">Overall Height = {span_h:.1f} mm (incl. 6 mm bottom step)</text>
+  <text x="403" y="{0.5*(y_top_dim+y_bot_dim):.2f}" font-size="4.2" font-family="monospace" fill="#1565c0" transform="rotate(-90 403 {0.5*(y_top_dim+y_bot_dim):.2f})" text-anchor="middle">Overall Height = {span_h:.1f} mm (incl. 2.5 mm bottom step)</text>
 
-  {render_seal_group(lh, lh_tx, lh_ty, "B467-51-168 (LH — Left / Driver Side, per Mazda Diagram 51-164)")}
-  {render_seal_group(rh, rh_tx, rh_ty, "B467-51-158 (RH — Right / Passenger Side, Mirrored)")}
+  {render_seal_group(lh, lh_tx, lh_ty, "B467-51-168 (LH — Left / Driver Side, Stanley 043-1305L, Body-Mating Face UP)")}
+  {render_seal_group(rh, rh_tx, rh_ty, "B467-51-158 (RH — Right / Passenger Side, Stanley 043-1305R, Body-Mating Face UP)")}
 
   <!-- 100 mm Scale Calibration Bar -->
   <g transform="translate(22, 442)">
@@ -542,7 +542,7 @@ def generate_svg_blueprint(path: Path, params: Dict, lh: Dict, rh: Dict) -> None
   <text x="135" y="457" font-size="4.3" font-family="sans-serif" fill="#333">2. Test-fit paper template on physical B467-51-161 / -151 tail lamp housing before cutting foam.</text>
 
   <!-- Coordinate Table -->
-  <text x="22" y="474" font-size="4.8" font-weight="bold" font-family="sans-serif" fill="#111">LH (B467-51-168) HOLE COORDINATES (relative to bottom-outer body corner X=0, Y=0):</text>
+  <text x="22" y="474" font-size="4.4" font-weight="bold" font-family="sans-serif" fill="#111">LH (B467-51-168, Body-Mating Face UP) HOLE COORDINATES (X=0 inboard/hatch side -&gt; X=335 outboard/fender side):</text>
   {"".join(rows_svg)}
 
   <text x="22" y="524" font-size="4.0" font-family="sans-serif" fill="#555">DXF Layers: CUT_OUTER (White/7) | CUT_INNER (Green/3) | CUT_HOLES (Red/1) | CALIBRATION (Blue/5) | ANNOTATIONS (Gray/8)</text>
